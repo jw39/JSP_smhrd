@@ -1,0 +1,54 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>JoinController</servlet-name>
+  	<display-name>JoinController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.JoinController</servlet-class>
+  	<!-- 조인 컨트롤러.java의 경로임. 
+  	경로를 보는 방법 1. 어노테이션 @aaa  
+  	2. url-pattern 저 파일의 경로를 지키기 위해 url 매핑을 하는데 web.xml의 url-패턴에서 보면 된다
+  	/ servlet-name : 얘를 8번이랑 20번 줄이랑 같게 하기..?
+  	파일명을 바꾸면 파일명은 바뀜 근데 web.xml의 url 매핑값들은 바뀌지 않음, 자동으로 바뀌지 않음
+  	파일명을 바꿀 거면 여기도 꼭 바꿔야함, servlet-name은 무조건 둘이 같아야 하고 servlet-class(경로)랑 url-pattern 중요  -->
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name> <!-- 별명 -->
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.LoginController</servlet-class> <!-- 실제 경로 -->
+  	
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutController</servlet-name>
+  	<display-name>LogoutController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FrontController</servlet-name>
+  	<display-name>FrontController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JoinController</servlet-name>
+  	<url-pattern>/JoinController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/LoginController</url-pattern> <!-- 주소창에 필요한 내용 -->
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutController</servlet-name>
+  	<url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FrontController</servlet-name>
+  	<url-pattern>*.do</url-pattern> <!-- .do로 끝나는 애들의 모든 요청이 front로 오게 하겠다 -->
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!-- 인코딩 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd"> <!-- 마이바티스 설정파일 -->
+<configuration>
+  <!-- db.properties파일 읽기 -->
+  <properties resource="com/smhrd/database/db.properties"></properties>
+  <typeAliases>
+  <!-- mapper에서 경로 지정 안 하게 여기서 경로를 지정한 것 같음 -->
+  	<typeAlias type="com.smhrd.model.MavenMember" alias="MavenMember"/>
+  </typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>	
+        <!-- $에 ""로 db.properties의 값을 바로 넣어도 됨 -->
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  	<!-- sql 문은 여기 mapper로 들어감, mapper를 만들고 경로 설정 필요, 실제 있는 매퍼만 넣어야하고 오타 주의 -->
+    <mapper resource = "com/smhrd/database/MavenMemberMapper.xml"/>
+  </mappers>
+</configuration>
+
+<!-- SqlSessionFactory 빌드하기 위한 작업 -->

@@ -1,0 +1,35 @@
+<%@page import="java.util.Random"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%
+	request.setCharacterEncoding("UTF-8");
+	String[] menu = request.getParameterValues("menu");
+	String sub = request.getParameter("subject");
+	Random rm = new Random();
+	int ran = rm.nextInt(menu.length);
+	%>
+	<fieldset>
+		<legend>랜덤뽑기결과</legend>
+
+		<table align="center">
+
+			<tr>
+				<td><%=sub%></td>
+			</tr>
+			<tr>
+				<td><%=menu[ran]%></td>
+			</tr>
+		</table>
+
+	</fieldset>
+
+</body>
+</html>

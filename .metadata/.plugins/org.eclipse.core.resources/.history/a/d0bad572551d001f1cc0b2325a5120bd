@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset>
+		<legend>랜덤뽑기</legend>
+		<form action="">
+			<table>
+				<tr>
+					<td><input type="text" value=num></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="생성하기"></td>
+				</tr>
+
+
+			</table>
+
+
+
+
+
+		</form>
+	</fieldset>
+
+
+
+
+
+</body>
+</html>
